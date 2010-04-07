@@ -10,7 +10,7 @@ Contentator is designed to be a flexible, light cms.  Hopefully it won't get in 
 
 Create a new rails app with the contentator template
 
-     rails MY_APP -m YOUR_GEM_PATH/lib/template.rb
+     rails MY_APP -m GEM_PATH/lib/template.rb
      
 Then drop in a database.yml and fire up the database
 
