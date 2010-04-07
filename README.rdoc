@@ -4,7 +4,7 @@ Contentator is designed to be a flexible, light cms.  Hopefully it won't get in 
 
 == Install
 
-For now build and install the gem with jeweler.  It will be on gemcutter eventually
+    gem install contentator
 
 == Usage
 
