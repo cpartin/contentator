@@ -1,0 +1,23 @@
+%iframe#form_iframe{:name => 'form_iframe', :style => 'width:0;height:0;border:0;'}
+
+= tiny_mce_init 
+
+.form_container
+  = link_to image_tag('icons/cancel.png'), content_path(@page.path), :id => 'cancel_button'
+
+  - form_for([:cms, :admin, @page_content_block], :before => "tinyMCE.triggerSave(true,true)", :html => {:multipart => true, :target => 'form_iframe'}) do |f|
+    = f.hidden_field :page_id, :value => @page.id 
+
+    = f.label t('cms.admin.page_content_blocks.title')
+    = f.text_field :title
+
+    = f.label t('cms.admin.page_content_blocks.text')
+    = f.text_area :text, :class => "mceEditor"
+
+    = f.label t('cms.admin.page_content_blocks.file_upload')
+    = f.file_field :photo
+
+    = label @page_content_block, t('cms.admin.page_content_blocks.remove_file')
+    = check_box_tag 'remove_image'
+
+    = submit_tag t('form_global.update')

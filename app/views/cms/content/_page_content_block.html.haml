@@ -1,0 +1,14 @@
+- id = page_content_block.id
+%div{ :id => "page_content_block_#{id}", :class => "box #{page_content_block.size}" }
+  - if current_user
+    .contentator-toolbar
+      = delete_link("page_content_block_#{id}", cms_admin_page_content_block_path(id))
+      = edit_link("page_content_block_#{id}", edit_cms_admin_page_content_block_path(id))
+      = image_tag('icons/move.png', :class => 'sort-handle')
+  .box-outter
+    .content
+      %h2
+        %div= page_content_block.title unless page_content_block.title.blank?
+      = image_tag page_content_block.photo.url, :align => 'left', :class => 'content_image' if page_content_block.photo.file?
+      .content-inner
+        = page_content_block.text    

@@ -1,0 +1,7 @@
+%h1= t('cms.admin.pages.new_page')
+
+- form_for([:cms, :admin, @page]) do |f| 
+  = render :partial => 'form', :locals => { :f => f, :button => t('form_global.create') } 
+
+- content_for :smart_navigation do
+  = link_to t('form_global.back'), cms_admin_pages_path 

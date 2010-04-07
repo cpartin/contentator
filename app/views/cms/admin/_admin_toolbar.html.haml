@@ -1,0 +1,10 @@
+#admin_toolbar
+  = link_to t('cms.admin.toolbar.go_to_admin'), cms_admin_root_path
+  |
+  - case @page.template_name
+
+  - when 'gallery'
+    = link_to_remote(t('form_global.upload'), :update => "new_file_attachment", :url =>  new_cms_admin_file_attachment_path(:page_id => @page.id, :owner_type => @page.class, :owner_id => @page.id), :method => :get)
+  - else
+    = link_to_remote(t('cms.admin.toolbar.add_content'), :update => "new_page_content_block", :url =>  new_cms_admin_page_content_block_path(:page_id => @page.id), :method => :get)
+

@@ -1,0 +1,15 @@
+#new_page_content_block
+- @page.page_content_blocks.each do |page_content_block|
+  = render :partial => 'cms/content/page_content_block', :locals => { :page_content_block => page_content_block }
+- if current_user
+  :javascript
+    Sortable.create('page_content_blocks_container', {tag: 'div', handle: 'sort-handle',
+      only: 'box',
+      onUpdate: function() {
+        new Ajax.Request('#{sort_cms_admin_page_content_blocks_path}?page_id=#{@page.id}', {
+          method: 'get',
+          parameters: Sortable.serialize('page_content_blocks_container', {tag: 'div', name: 'page_content_block'})
+        });
+      }
+    });
+  

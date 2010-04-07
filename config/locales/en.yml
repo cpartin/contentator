@@ -1,0 +1,49 @@
+en:
+  layout:
+    title: 'Temp Title - Change Me'
+  form_global:
+    create: 'Create'
+    update: 'Update'
+    submit: 'Submit'
+    back: 'Back'
+    move: 'Move'
+    sort: 'Sort'
+    upload: 'Upload'
+    delete_warning: 'Are you sure you want to delete this item?'
+  cms:
+    admin:
+      layout:
+        title: 'Administration'
+        welcome: 'Welcome'
+        logout: 'Logout'
+        copyright: 'Copyright &copy;'
+      toolbar:
+        go_to_admin: 'Go to Admin'
+        add_content: 'Add Content'
+      page_content_blocks:
+        title: 'Content Title'
+        text: 'Content Text'
+        file_upload: 'Upload File'
+        remove_file: 'Remove File'
+      pages:  
+        pages_title: 'Site Pages'
+        new_page: 'New Page'
+        update_page: 'Update Page'
+        visible: 'Visible'
+        in_navigation: 'In Navigation?'
+        title: 'Page Title'
+        subtitle: 'Page Subtitle'
+        parent: 'Page Parent'
+        template: 'Page Template'
+        flash_create: 'Page was successfully created.'
+        flash_update: 'Page was successfully updated.'
+        flash_delete: 'Page was deleted'
+        error_length: 'must have a length between 1 and 255 characters'
+        error_slug_unique: 'must be unique, slug already taken'
+        error_lowercase: 'can only contain lowercase letters, numbers and dashes'
+        error_delete_home: 'Cannot delete home page.'
+        error_delete_children: 'Cannot delete page with children. Please delete children first.'
+        templates:
+          home: 'home'
+          content: 'content'
+          gallery: 'gallery'

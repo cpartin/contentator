@@ -1,0 +1,877 @@
+body {
+/* if you want to add margin or padding, add it to #body */
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+}
+
+body, td {
+  font: normal normal normal 14px / normal Arial, Verdana, sans-serif;
+  color: #FFF;
+}
+
+body {
+/* part of the ie background position: fixed hack */
+  background-image: url(/images/blank.gif);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: .9em;
+  font-weight: normal;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.6em;
+  color: #910000
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+form {
+  display: inline;
+}
+
+a {
+  color: #F00;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  border: 0;
+}
+
+input, select, textarea {
+  font: normal normal normal 14px / normal Arial, Verdana, sans-serif;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clear {
+  clear: both;
+  height: 1px;
+  overflow: hidden;
+}
+
+.clear-right {
+  clear: right;
+  height: 1px;
+  overflow: hidden;
+}
+
+.clear-left {
+  clear: left;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Standard Layout -- many of the common changes have been broken out lower
+ *----------------------------------------------------------------------------*/
+#background {
+/* the image assigned to the background is in the html */
+/*background: url(/images/background.jpg) no-repeat;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+* html #background {
+/* ie hack to treat the background as position: fixed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  top: expression((_IEHackTop = document.documentElement.scrollTop) + 'px');
+  left: expression((_IEHackLeft = document.documentElement.scrollLeft) + 'px');
+}
+
+#body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+#body #body_wrapper {
+  margin: 0 60px 0 90px;
+}
+
+#body #body_wrapper #logo {
+/* the logo image can be found in the html */
+  position: relative;
+  top: 1px;
+  width: 1px;
+  height: 0;
+  float: left;
+}
+
+#body #body_wrapper #logo img {
+  position: absolute;
+}
+
+#body #body_wrapper #utility {
+  position: absolute;
+  right: 297px;
+  padding: 4px 10px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  filter: alpha(opacity = 45);
+  -moz-opacity: 0.45;
+  opacity: 0.45;
+}
+
+#body #body_wrapper #body_container {
+  padding-top: 100px;
+  min-width: 800px;
+}
+
+#body #body_wrapper #context_wrapper {
+  position: relative;
+  float: right;
+  width: 225px;
+}
+
+#body #body_wrapper #context_container {
+  position: relative;
+  float: right;
+  width: 225px;
+  margin-top: 25px;
+}
+
+#body #body_wrapper #subnavigation {
+  margin-top: 50px;
+}
+
+#body #body_wrapper #subnavigation .content {
+  position: relative;
+  top: -10px;
+  margin: 0 33px 0 20px;
+}
+
+#body #body_wrapper #subnavigation .content h2 {
+  padding-bottom: 20px;
+}
+
+#body #body_wrapper #subnavigation .content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#body #body_wrapper #subnavigation .content a {
+  display: block;
+  padding: 5px 0 5px 12px;
+}
+
+#body #body_wrapper #subnavigation #context a {
+  display: block;
+  padding-left: 8px;
+  border: 0;
+}
+
+#body #body_wrapper #context {
+  padding: 20px 20px;
+  margin: 20px 13px 0 0;
+}
+
+#body #body_wrapper #context_container #context_arrow {
+  position: absolute;
+  z-index: 5;
+  width: 20px;
+  height: 35px;
+  margin: -10px 0 0 -20px;
+}
+
+#body #body_wrapper #context_container #context_container_end {
+  height: 50px;
+}
+
+#body #body_wrapper div#content_container {
+  margin-right: 210px;
+  position: relative;
+  z-index: 1;
+}
+
+#body #body_wrapper #admin_tabbed_navigation ul {
+  position: relative;
+  z-index: 4;
+  float: right;
+  padding: 0 10px 0 0;
+  margin: 0;
+  top: -20px;
+  height: 1px;
+}
+
+#body #body_wrapper #admin_tabbed_navigation li {
+  position: relative;
+  display: block;
+  float: left;
+  height: 52px;
+  margin-right: 2px;
+  padding-right: 10px;
+}
+
+#body #body_wrapper #admin_tabbed_navigation li a {
+  display: block;
+  float: left;
+  padding: 13px 10px 0 20px;
+  height: 40px;
+  outline: none;
+}
+
+#body #body_wrapper #admin_tabbed_navigation li.highlighted {
+  padding-right: 13px;
+  margin-right: -5px;
+}
+
+#body #body_wrapper #admin_tabbed_navigation li.highlighted a {
+  padding: 13px 14px 0 20px;
+}
+
+#body #body_wrapper div#content_container #content_shadow_right {
+  padding-right: 15px;
+  position: relative;
+  z-index: 3;
+}
+
+#body #body_wrapper div#content_container .content {
+  padding: 20px 16px;
+  position: relative;
+  filter: alpha(opacity = 90);
+  -moz-opacity: 0.90;
+  opacity: 0.90;
+}
+
+#body #body_wrapper div#content_container .content #controller_content {
+  padding-top: 60px;
+}
+
+#body #body_wrapper div#content_container .content h1 {
+  margin-bottom: 10px;
+}
+
+#body #body_wrapper div#content_container #crumbs {
+  margin: 0;
+  padding: 0;
+  height: 24px;
+  position: absolute;
+}
+
+#body #body_wrapper div#content_container #crumbs li {
+  border-top: 1px solid #DDD;
+  display: block;
+  float: left;
+  height: 24px;
+  overflow: hidden;
+}
+
+#body #body_wrapper div#content_container #crumbs li a {
+  padding: 3px 6px 0 18px;
+  display: block;
+  float: left;
+  height: 24px;
+}
+
+#body #body_wrapper div#content_container #crumbs li.first a {
+  margin-left: 12px;
+  padding-left: 6px;
+}
+
+#body #body_wrapper div#content_container #crumbs li.current {
+}
+
+#body #body_wrapper div#content_container #crumbs li.current a {
+  padding-right: 12px;
+}
+
+#body #body_wrapper div#content_container #smart_navigation {
+  position: relative;
+  z-index: 5;
+  padding-top: 4px;
+  float: right;
+}
+
+#body #body_wrapper #footer {
+  margin-right: 15px;
+  padding-top: 3px;
+  padding-bottom: 40px;
+}
+
+/* Control elements (trees, lists, forms, etc.)
+ *----------------------------------------------------------------------------*/
+
+/* Standard Theme -- things you may often want to change
+*----------------------------------------------------------------------------*/
+/* layout */
+#utility {
+  background: #AAA;
+  font-size: .8em;
+  color: #FFF;
+}
+
+#utility a {
+  color: #FFF;
+}
+
+#utility a:hover {
+  color: #333;
+}
+
+#context_container {
+  background: url(/images/admin_standard/drawer-start.png) no-repeat;
+}
+
+#subnavigation {
+  background: url(/images/admin_standard/drawer-middle.png) repeat-y;
+}
+
+#subnavigation h2 {
+  color: #A6D5D6;
+  border-bottom: 1px dotted #DDD;
+  font-size: 1.1em;
+}
+
+#subnavigation .content a {
+  font-size: .8em;
+  color: #DDD;
+  border-bottom: 1px dotted #DDD;
+  background: url(/images/admin_standard/subnavigation-bullet-1.png) no-repeat 4px .7em;
+}
+
+#subnavigation .content a.active {
+  background: #A6D5D6;
+  color: #000;
+}
+
+#subnavigation #context {
+  background: #D3D3D3 url(/images/admin_standard/context-bg.png) repeat-x top;
+  color: #666;
+  font-size: .9em;
+}
+
+#subnavigation #context a {
+  font-size: .9em;
+  color: #666;
+  background: url(/images/admin_standard/subnavigation-bullet-2.png) no-repeat 0 .4em;
+}
+
+#subnavigation #context_arrow {
+  background: url(/images/admin_standard/context-arrow.png) no-repeat;
+}
+
+#context_container_end {
+  background: url(/images/admin_standard/drawer-end.png) no-repeat;
+}
+
+#admin_tabbed_navigation li {
+  background: url(/images/admin_standard/tab-inactive-cap.png) no-repeat top right;
+}
+
+#admin_tabbed_navigation li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  background: url(/images/admin_standard/tab-inactive.png) no-repeat;
+}
+
+#admin_tabbed_navigation li a:hover {
+  color: #F00;
+}
+
+#admin_tabbed_navigation li.highlighted {
+  background: url(/images/admin_standard/tab-active-cap.png) no-repeat right top;
+}
+
+#admin_tabbed_navigation li.highlighted a {
+  background: url(/images/admin_standard/tab-active.png) no-repeat;
+}
+
+#admin_tabbed_navigation li.highlighted a:hover {
+  color: #FFF;
+  cursor: default;
+}
+
+#content_container #content_shadow_right {
+  background: url(/images/admin_standard/shadow-right.png) repeat-y right;
+}
+
+#content_container .content {
+  background: #FFF url(/images/admin_standard/content-header-bg.png) repeat-x;
+  color: #555;
+}
+
+#controller_content a {
+  color: #000;
+}
+
+#crumbs li {
+  border-top: 1px solid #DDD;
+  background: url(/images/admin_standard/crumb-bg.gif);
+}
+
+#crumbs li a {
+  background: url(/images/admin_standard/crumb-divide.gif) no-repeat;
+  color: #666;
+  text-decoration: none;
+}
+
+#crumbs li a:hover {
+  color: #222;
+}
+
+#crumbs li.first {
+  background: url(/images/admin_standard/crumb-divide.gif) no-repeat;
+}
+
+#crumbs li.first a {
+  background: url(/images/admin_standard/crumb-bg.gif);
+}
+
+#crumbs li.current {
+  background: url(/images/admin_standard/crumb-bg-current.gif);
+}
+
+#crumbs li.current a {
+  background: url(/images/admin_standard/crumb-divide-current.gif) no-repeat;
+  color: #222;
+  cursor: default;
+}
+
+#crumbs li.current a:hover {
+  color: #222;
+}
+
+#smart_navigation a {
+  color: #F00;
+}
+
+#smart_navigation a:hover {
+  color: #222;
+  text-decoration: none;
+}
+
+.errorExplanation {
+  margin: 20px 0;
+  padding: 15px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #ff9999;
+  border: 2px solid #cc0000
+}
+
+.errorExplanation li{
+  list-style:none;
+}
+
+.flash-messages .message {
+  margin: 20px 0;
+  padding: 15px;
+  font-size: 1.4em;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.flash-messages .notice.message {
+  background-color: #99ff99;
+  border: 2px solid #009900
+}
+
+.flash-messages .warning.message {
+  background-color: #ffffcc;
+  border: 2px solid #ffcc00
+}
+
+.flash-messages .error.message {
+  background-color: #ff9999;
+  border: 2px solid #cc0000
+}
+
+#footer {
+  background: url(/images/admin_standard/shadow-bottom.png) repeat-x;
+  font-size: .7em;
+  color: #777;
+}
+
+/* interface */
+
+/* png support for ie6 */
+#logo img,
+#main_tabbed_navigation li.active a,
+#context_container,
+#context_container #subnavigation,
+#context_container_end {
+  behavior: url(/javascripts/pngfix.htc);
+}
+
+.roster {
+  padding: 10px;
+  background: #F6F6F6;
+  border-radius: 7px;
+  margin-top: 20px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border: 1px solid #E9E9E9; /*display: block;*/
+}
+
+.roster .client {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #E9E9E9;
+  margin-bottom: 5px;
+}
+
+.roster .client ul {
+  margin: 5px 0 10px 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.roster .client ul li {
+
+}
+
+/* Site specific styles
+*----------------------------------------------------------------------------*/
+#controller_content table {
+  width: 100%;
+}
+
+#controller_content td {
+  color: #000;
+  text-align: left;
+}
+
+#controller_content th {
+  text-align: left;
+}
+
+/* lists */
+table.list {
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+table.list td.filter {
+  background: none !important;
+  padding: 0;
+  border: 0;
+}
+
+table.list td.filter .filter-form {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #999;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+table.list td.filter .filter-form table {
+  width: auto !important;
+}
+
+table.list td.filter .filter-form table .buttons {
+  text-align: right !important;
+}
+
+table.list th {
+  padding: 10px 5px;
+  background: #eee;
+  /*border: 1px solid #E5E5E7;*/
+  border-bottom: 2px solid #ccc;
+}
+
+table.list tbody.list {
+  /*border: 1px solid #F5F5F7;*/
+}
+
+table.list tbody.list td {
+  padding: 8px 5px;
+  /*border-left: 1px solid #F5F5F7;*/
+  border-bottom: 1px solid #F5F5F7;
+}
+
+table.list tbody.list td.list-controls {
+  width: 50px;
+}
+
+table.list tbody.list tr.even td {
+  background: #F5F5F7;
+}
+
+table.list tbody.list tr.odd td {
+}
+
+table.list tbody.list tr.inactive td {
+  color: #999 !important;
+}
+
+table.list tbody.sortable .list-controls .move-image {
+  cursor: move;
+}
+
+table.list tbody.sortable {
+  border: 1px dotted #D7D7DA;
+}
+
+table.list tbody.sortable td {
+  padding: 3px;
+  background: none !important;
+  border: 1px dotted #D7D7DA;
+}
+
+/* forms */
+
+input ,label, select{
+display: block;
+margin: 10px;
+}
+
+form.styled p {
+  margin: 3px 0;
+  clear: left;
+}
+
+form.styled p label {
+  display: block;
+  float: left;
+  width: 150px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+form.styled div.options {
+  padding-left: 150px;
+}
+
+form.styled div.options label.title-label {
+  position: absolute;
+  margin-left: -150px;
+}
+
+form.styled span.options {
+  float: left;
+}
+
+form.styled fieldset {
+  clear: left;
+  margin: 0;
+  padding: 5px;
+}
+
+form.styled fieldset label {
+  width: 143px;
+}
+
+form.styled .text {
+  background: #666 url(/images/admin_standard/input-background.gif) repeat-x;
+  border: 1px solid #999;
+  color: #FFF;
+  padding: 3px 0;
+}
+
+form.styled div.display {
+  padding: 0 0 0 150px;
+  clear: left;
+}
+
+form.styled fieldset div.display {
+  padding: 0 0 0 143px;
+}
+
+form.styled div.buttons {
+  padding: 10px 0 0 150px;
+  clear: left;
+}
+
+form.styled fieldset div.buttons {
+  padding: 0 0 0 145px;
+}
+
+form.styled .error .text {
+  border: 1px solid #CD0000;
+}
+
+form.styled .error label {
+  color: #CD0000;
+}
+
+form.styled .error .field-errors {
+  display: block;
+  color: #CD0000;
+  margin-left: 150px;
+  font-size: .8em;
+}
+
+form.styled fieldset .error .field-errors {
+  margin-left: 143px;
+}
+
+form.styled .field-tip {
+  display: block;
+  margin-left: 150px;
+  font-size: .8em;
+}
+
+form.styled fieldset .field-tip {
+  margin-left: 143px;
+}
+
+form.styled .error-messages {
+  margin-bottom: 15px;
+  text-indent: 50px;
+  background: #FFD68F url(/images/admin_standard/form-error.png) no-repeat 10px center;
+  padding: 10px 5px;
+  border: 2px solid #FFA200;
+}
+
+input, label, select {
+  margin: 10px;
+}
+
+/* Forms
+ *----------------------------------------------------------------------------*/
+.form-container {
+  color: #222;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  padding: 20px 20px 20px 20px;
+  font-size: 1.05em;
+  margin: 10px 0 10px 0;
+  background: #F9F9F9;
+  border: 1px solid #CCC;
+}
+
+
+/* Buttons
+*----------------------------------------------------------------------------*/
+a.button,
+a.button:visited, button,
+.commit input,
+input.button {
+  padding: 4px 10px 4px !important;
+  line-height: normal; /*font-family: Tahoma Arial sans-serif;*/
+  font-size: 13px;
+  background: #222 url(/images/admin_standard/button-background.png) repeat-x;
+  display: inline-block;
+  color: #FFF;
+  text-decoration: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  position: relative;
+  cursor: pointer;
+}
+
+a.button:hover,
+button:hover,
+.commit input:hover,
+input.button:hover {
+  background-color: #000;
+}
+
+input.button {
+  margin-top: -2px;
+  float: right;
+  padding: 8px 10px 8px !important;
+}
+
+/* trees */
+ul.tree, ul.tree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.tree ul {
+  margin: 0 0 0 20px;
+}
+
+ul.tree li {
+  line-height: 200%;
+  text-indent: 20px;
+  width: 100%;
+}
+
+ul li span.spacer {
+  width: 16px;
+  height: 16px;
+}
+
+ul.tree li span {
+  display: inline-block;
+  text-indent: 0;
+  line-height: 1em;
+  height: 1em;
+}
+
+ul.tree li span.tree-controls {
+  margin: 0 5px;
+}
+
+ul.tree li span.tree-controls a {
+  display: inline-block;
+  text-indent: -10000px;
+  width: 16px;
+  height: 16px;
+  margin-top: 5px;
+  outline: none;
+}
+
+ul.tree li span.tree-controls a.edit, span.tree-controls a.edit {
+  background: url(/images/icons/edit.png) no-repeat;
+}
+
+ul.tree li span.tree-controls a.delete, span.tree-controls a.delete {
+  background: url(/images/icons/delete.png) no-repeat;
+}
+
+ul.tree li span.tree-controls a.move, span.tree-controls a.move {
+  background: url(/images/icons/move.png) no-repeat;
+  cursor: move;
+}
+
+.images .image {
+  margin-bottom: 5px;
+  float: left;
+  border: 1px solid #999;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 4px;
+  margin-right: 5px;
+}
+
+.images .image .controls {
+  width: 20px;
+  float: left;
+}
+
+.images .image .controls .move-image {
+  cursor: move;
+}

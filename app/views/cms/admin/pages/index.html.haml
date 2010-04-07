@@ -1,0 +1,13 @@
+- content_for :smart_navigation do
+  = link_to t('cms.admin.pages.new_page'), new_cms_admin_page_path
+ 
+%h1= t('cms.admin.pages.pages_title')
+ 
+%table.list
+  %tr
+    %th= t('cms.admin.pages.title')
+ 
+    %tr
+      %td
+        = sortable_tree @pages, 'page'
+        = sortable_element 'tree_root', { :tree => true, :url => update_page_tree_cms_admin_pages_path, :overlap => :vertical, :handle => t('form_global.move')  }

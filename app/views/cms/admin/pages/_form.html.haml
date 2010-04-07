@@ -1,0 +1,22 @@
+= f.error_messages
+
+= f.label t('cms.admin.pages.visible')
+= f.check_box :visible
+
+= f.label t('cms.admin.pages.in_navigation')
+= f.check_box :in_navigation
+
+= f.label t('cms.admin.pages.title')
+= f.text_field :title
+
+= f.label t('cms.admin.pages.subtitle')
+= f.text_field :subtitle
+
+- unless @page == Page.home_page
+  = f.label t('cms.admin.pages.parent')
+  = f.collection_select(:parent_id, @pages, :id, :title)
+
+= f.label t('cms.admin.pages.template')
+= f.select :template_name, Page::TEMPLATES
+
+= f.submit button

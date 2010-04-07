@@ -1,0 +1,9 @@
+- id = file_attachment.id
+%a{:name => id}
+%div{:id => "file_attachment_#{id}", :class => 'box file_attachment'}
+  - if current_user
+    .contentator-toolbar
+      = delete_link("file_attachment_#{id}", "#{cms_admin_file_attachment_path(id, 'page_id' => @page.id)}")
+      = image_tag('icons/move.png', :class => 'sort-handle')
+  .clear
+  = image_tag file_attachment.file.url, :class => 'content_image' if file_attachment.file.file?

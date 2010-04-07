@@ -1,0 +1,15 @@
+.DS_Store
+config/database.yml
+tmp/**/*
+log/*
+.idea/*
+db/schema.rb
+*.iml
+*.ipr
+*.iws
+tmp/restart.txt
+pkg
+public/images/photos
+public/images/files
+vendor/plugins/*
+public/javascripts/tiny_mce/

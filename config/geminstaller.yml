@@ -1,0 +1,22 @@
+gems:
+- name: thoughtbot-shoulda
+  version: '>= 2.10.2'
+  lib: 'shoulda'
+  source: 'http://gems.github.com'
+- name: thoughtbot-factory_girl
+  version: '>= 1.2.2'
+  lib: 'factory_girl'
+  source: 'http://gems.github.com'
+- name: haml
+  version: '>= 2.2.6' 
+- name: mocha
+  version: '>= 0.9.8' 
+- name: thoughtbot-paperclip
+  version: '>= 2.1.2'
+  lib: 'paperclip'
+  source: 'http://gems.github.com'
+- name: kete-tiny_mce
+  version: '>= 0.1.0' 
+  lib: 'tiny_mce'
+  source: 'http://gems.github.com'
+  

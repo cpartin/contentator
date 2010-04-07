@@ -1,0 +1,16 @@
+#new_file_attachment
+
+- @page.file_attachments.each do |file_attachment|
+  = render :partial => 'cms/content/file_attachment', :locals => {:file_attachment => file_attachment}
+  
+- if current_user
+  :javascript
+    Sortable.create('file_attachments_container', {tag: 'div', handle: 'sort-handle',
+      only: 'box',
+      onUpdate: function() {
+        new Ajax.Request('#{sort_cms_admin_file_attachments_path}?page_id=#{@page.id}', {
+          method: 'get',
+          parameters: Sortable.serialize('file_attachments_container', {tag: 'div', name: 'file_attachment'})
+        });
+      }
+    });  

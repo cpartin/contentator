@@ -1,0 +1,49 @@
+de:
+  layout:
+    title: 'GERMAN - Temp Title - Change Me'
+  form_global:
+    create: 'GERMAN - Create'
+    update: 'GERMAN - Update'
+    submit: 'GERMAN - Submit'
+    back: 'GERMAN - Back'
+    move: 'GERMAN - Move'
+    sort: 'GERMAN - Sort'
+    Upload: 'GERMAN - Upload'
+    delete_warning: 'GERMAN - Are you sure you want to delete this item?'
+  cms:
+    admin:
+      layout:
+        title: 'GERMAN - Administration'
+        welcome: 'GERMAN - Welcome'
+        logout: 'GERMAN - Logout'
+        copyright: 'GERMAN - Copyright &copy;'
+      toolbar:
+        go_to_admin: 'GERMAN - Go to Admin'
+        add_content: 'GERMAN - Add Content'
+      page_content_blocks:
+        title: 'GERMAN - Content Title'
+        text: 'GERMAN - Content Text'
+        file_upload: 'GERMAN - Upload File'
+        remove_file: 'GERMAN - Remove File'
+      pages:  
+        pages_title: 'GERMAN - Site Pages'
+        new_page: 'GERMAN - New Page'
+        update_page: 'GERMAN - Update Page'
+        visible: 'GERMAN - Visible'
+        in_navigation: 'GERMAN - In Navigation?'
+        title: 'GERMAN - Page Title'
+        subtitle: 'GERMAN - Page Subtitle'
+        parent: 'GERMAN - Page Parent'
+        template: 'GERMAN - Page Template'
+        flash_create: 'GERMAN - Page was successfully created.'
+        flash_update: 'GERMAN - Page was successfully updated.'
+        flash_delete: 'GERMAN - Page was deleted'
+        error_length: 'GERMAN - must have a length between 1 and 255 characters'
+        error_slug_unique: 'GERMAN - must be unique, slug already taken'
+        error_lowercase: 'GERMAN - can only contain lowercase letters, numbers and dashes'
+        error_delete_home: 'GERMAN - Cannot delete home page.'
+        error_delete_children: 'GERMAN - Cannot delete page with children. Please delete children first.'
+        templates:
+          home: 'GERMAN - home'
+          content: 'GERMAN - content'
+          gallery: 'GERMAN - gallery'

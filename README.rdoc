@@ -1,0 +1,45 @@
+== Contentator
+
+Contentator is designed to be a flexible, light cms.  Hopefully it won't get in your way and will give you an easy way to add inline content editing and navigation   management.
+
+== Install
+
+For now build and install the gem with jeweler.  It will be on gemcutter eventually
+
+== Usage
+
+Create a new rails app with the contentator template
+
+     rails MY_APP -m YOUR_GEM_PATH/lib/template.rb
+     
+Then drop in a database.yml and fire up the database
+
+    rake db:create:all
+    rake db:migrate
+    rake db:test:prepare
+    
+Start the server and begin adding content.  Go to /admin and begin adding pages.  
+
+== Custom Content
+
+There is a generator for custom cms content types.  It works much like a nested resource and creates inline editing.
+
+    script/generate content contact name:string email:string phone:string notes:text
+    
+The new content type will need to be wired up.  To create a contacts template just make a new template in the page model, add an admin tool in views/cms/admin/_admin_toolbar.html.haml and create a view in views/cms/content.
+
+== Globalization
+
+The admin text all translatable.  The english version is located in config/locales/en.yml.  There is also a sample de.yml file for testing locales.  Just add a new locale file to add other langauge support.
+
+The globalization2 plugin is also installed.  Dynamic content in pages and page content blocks can accept translations for any locale.  
+
+http://github.com/joshmh/globalize2
+
+There is support for using locale subdomains already.  See set_locale in the application controller. Add the following to /etc/hosts
+
+    127.0.0.1       en.localhost
+    127.0.0.1       de.localhost
+    
+The locale will automatically be set based on the subdomain.    
+

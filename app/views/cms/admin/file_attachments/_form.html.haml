@@ -1,0 +1,17 @@
+%iframe#form_iframe{:name => 'form_iframe', :style => 'width:0;height:0;border:0;'}
+
+.form_container
+  = link_to image_tag('icons/cancel.png'), content_path(@page.path), :id => 'cancel_button'
+
+  - form_for([:cms, :admin, @file_attachment], :before => "tinyMCE.triggerSave(true,true)", :html => {:multipart => true, :target => 'form_iframe'}) do |f|
+    = f.hidden_field :page_id, :value => @page.id 
+    = f.hidden_field :owner_id, :value => @page.id 
+    = f.hidden_field :owner_type, :value => @page.class 
+
+    = f.label t('cms.admin.pages.visible')
+    = f.check_box :visible
+
+    = f.label t('cms.admin.page_content_blocks.file_upload')
+    = f.file_field :file
+
+    = submit_tag t('form_global.upload')
